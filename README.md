@@ -1,31 +1,81 @@
-# Workout Strength Analytics Project
+# Strength Training Analytics Dashboard
 
-This project analyzes personal strength training data using Excel, SQL, and Power BI.  
-The goal is to track workout performance, training volume, and exercise frequency over time.
+A data analytics project analyzing personal strength training data using **Excel, SQL, and Power BI**.
+
+The goal of this project is to explore workout performance trends, training volume, and strength progression over time.
+
+---
+
+
+
+## Project Overview
+
+This project analyzes strength training data exported from a workout tracking app. The data was cleaned, transformed, and analyzed to create an interactive Power BI dashboard that highlights:
+
+* Strength progression over time
+* Weekly training volume trends
+* Total cumulative training volume
+* Distribution of volume across exercises
+* Workout frequency and total workload
+
+---
 
 ## Tools Used
 
-- Excel — data cleaning and preparation
-- SQL — querying workout trends and metrics
-- Power BI — visualization and dashboards
-- GitHub — project organization and version control
+**Excel**
 
-## Dataset
+* Initial data inspection
+* Data cleaning and formatting
 
-The dataset records individual exercise sets from strength workouts.
+**SQL (SQLite)**
 
-Columns include:
+* Data exploration and validation
+* Aggregation queries for workout metrics
 
-- workout_id
-- date
-- exercise
-- reps
-- weight_lb
-- volume
+**Power BI**
 
-Volume is calculated as:
+* Data modeling
+* DAX measures
+* Interactive dashboard development
 
-volume = reps × weight_lb
+---
 
-## Project Structure
+## Key Metrics
 
+* **Total Workouts:** Number of recorded training sessions
+* **Total Training Volume:** Total weight lifted across all workouts
+* **Strength Progression:** Average working weight across time
+* **Weekly Training Volume:** Training load trends over time
+* **Cumulative Volume:** Total workload accumulation
+
+---
+
+## Repository Structure
+
+```
+data/
+    raw/                # Original exported workout dataset
+
+sql/
+    analysis_queries.sql # SQL queries used for analysis
+
+powerbi/
+    workout_dashboard.pbix # Power BI dashboard file
+
+dashboard.png            # Dashboard preview image
+README.md
+```
+
+---
+
+## Future Improvements
+
+* Add PR tracking (max weight per exercise)
+* Add workout intensity metrics
+* Expand dataset with additional training history
+
+---
+
+## Author
+
+Personal analytics project created to demonstrate skills in **data cleaning, SQL analysis, and Power BI dashboard development**.
