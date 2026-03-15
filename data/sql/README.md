@@ -1,80 +1,76 @@
-# Strength Training Analytics Dashboard
+# SQL Analysis
 
-A data analytics project analyzing personal strength training data using **Excel, SQL, and Power BI**.
+This folder contains SQL queries used to explore and analyze the workout dataset.
 
-The goal of this project is to explore workout performance trends, training volume, and strength progression over time.
-
----
-
-
-
-## Project Overview
-
-This project analyzes strength training data exported from a workout tracking app. The data was cleaned, transformed, and analyzed to create an interactive Power BI dashboard that highlights:
-
-* Strength progression over time
-* Weekly training volume trends
-* Total cumulative training volume
-* Distribution of volume across exercises
-* Workout frequency and total workload
+The queries were written using **SQLite** and were primarily used to validate metrics and generate insights that informed the Power BI dashboard.
 
 ---
 
-## Tools Used
+## Objectives
 
-**Excel**
+The SQL analysis focused on answering key questions about the training dataset:
 
-* Initial data inspection
-* Data cleaning and formatting
-
-**SQL (SQLite)**
-
-* Data exploration and validation
-* Aggregation queries for workout metrics
-
-**Power BI**
-
-* Data modeling
-* DAX measures
-* Interactive dashboard development
+* What exercises contribute the most training volume?
+* How much total weight has been lifted across all workouts?
+* How frequently are exercises performed?
+* How does volume vary across exercises?
 
 ---
 
-## Key Metrics
+## Dataset
 
-* **Total Workouts:** Number of recorded training sessions
-* **Total Training Volume:** Total weight lifted across all workouts
-* **Strength Progression:** Average working weight across time
-* **Weekly Training Volume:** Training load trends over time
-* **Cumulative Volume:** Total workload accumulation
-
----
-
-## Repository Structure
+The queries operate on the cleaned workout dataset:
 
 ```
-data/
-    raw/                # Original exported workout dataset
-
-sql/
-    analysis_queries.sql # SQL queries used for analysis
-
-powerbi/
-    workout_dashboard.pbix # Power BI dashboard file
-
-dashboard.png            # Dashboard preview image
-README.md
+workout_strength_cleaned
 ```
 
+Key columns include:
+
+* `date` – Workout date and time
+* `exercise` – Exercise name
+* `reps` – Number of repetitions
+* `weight_lb` – Weight used in pounds
+* `volume` – Calculated as weight × reps
+* `workout_id` – Unique identifier for each workout session
+
 ---
 
-## Future Improvements
+## Example Query
 
-* Add PR tracking (max weight per exercise)
-* Add workout intensity metrics
-* Expand dataset with additional training history
+The following query calculates total training volume by exercise:
+
+```sql
+SELECT
+    exercise,
+    SUM(volume) AS total_volume
+FROM workout_strength_cleaned
+GROUP BY exercise
+ORDER BY total_volume DESC;
+```
+
+This query helps identify which exercises contribute the most to overall training workload.
 
 ---
+
+## Purpose in the Project Workflow
+
+SQL was used as an intermediate analysis layer between the raw dataset and the final Power BI dashboard.
+
+The workflow for this project was:
+
+```
+Workout Export
+      ↓
+Excel Data Cleaning
+      ↓
+SQL Data Exploration
+      ↓
+Power BI Dashboard
+```
+
+SQL queries helped validate calculations such as total volume, workout counts, and exercise-level summaries before building the dashboard visualizations.
+
 
 ## Author
 
