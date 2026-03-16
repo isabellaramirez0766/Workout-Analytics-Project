@@ -20,6 +20,14 @@ This project analyzes strength training data exported from a workout tracking ap
 
 ---
 
+Workout App Export
+        ↓
+     Excel Cleaning
+        ↓
+     SQL Analysis
+        ↓
+     Power BI Dashboard
+
 ## Tools Used
 
 **Excel**
