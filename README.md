@@ -1,5 +1,7 @@
 # Strength Training Analytics Dashboard
 
+![Dashboard Preview](visuals/workout_strength_dashboard.pdf)
+
 A data analytics project analyzing personal strength training data using **Excel, SQL, and Power BI**.
 
 The goal of this project is to explore workout performance trends, training volume, and strength progression over time.
