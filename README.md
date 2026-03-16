@@ -1,6 +1,6 @@
 # Strength Training Analytics Dashboard
 
-![Dashboard Preview](visuals/workout_strength_dashboard.pdf)
+![Dashboard Preview](visuals/workout_strength_dashboard.png)
 
 A data analytics project analyzing personal strength training data using **Excel, SQL, and Power BI**.
 
